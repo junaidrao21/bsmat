@@ -35,10 +35,10 @@ mysqli_close($conn);
 <meta http-equiv="refresh" content="0;url=pages/index.html">
 <title>BSMAT - Behavioral Survey Measurement & Analysis Tool</title>
 <script language="javascript">
-    window.location.href = "pages/index.html"
+    window.location.href = "pam.html"
 </script>
 </head>
 <body>
-Go to <a href="pages/pam.html">/pages/pam.html</a>
+Go to <a href="pam.html">pam.html</a>
 </body>
 </html>
