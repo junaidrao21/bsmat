@@ -1,8 +1,4 @@
 <?php
-if (!empty($_POST))
-{
-  echo "I have request $_POST[optionsRadiosInline]";
-}
 ini_set('display_errors', 1);
 $server = 'localhost';
 $user = 'root';
@@ -33,3 +29,16 @@ mysqli_query($conn,$sql1);
 mysqli_query($conn,"INSERT INTO data (Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13) VALUES ('$_POST[optionsRadiosInline]','$_POST[optionsRadiosInline2]','$_POST[optionsRadiosInline3]','$_POST[optionsRadiosInline4]','$_POST[optionsRadiosInline5]','$_POST[optionsRadiosInline6]','$_POST[optionsRadiosInline7]','$_POST[optionsRadiosInline8]','$_POST[optionsRadiosInline9]','$_POST[optionsRadiosInline10]','$_POST[optionsRadiosInline11]','$_POST[optionsRadiosInline12]','$_POST[optionsRadiosInline13]')");
 mysqli_close($conn);
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="refresh" content="0;url=pages/index.html">
+<title>BSMAT - Behavioral Survey Measurement & Analysis Tool</title>
+<script language="javascript">
+    window.location.href = "pages/index.html"
+</script>
+</head>
+<body>
+Go to <a href="pages/pam.html">/pages/pam.html</a>
+</body>
+</html>
