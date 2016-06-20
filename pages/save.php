@@ -35,6 +35,7 @@ mysqli_close($conn);
 <meta http-equiv="refresh" content="0;url=pages/index.html">
 <title>BSMAT - Behavioral Survey Measurement & Analysis Tool</title>
 <script language="javascript">
+	alert("Response Added")
     window.location.href = "index.html"
 </script>
 </head>
