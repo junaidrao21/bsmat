@@ -638,14 +638,11 @@
 	
 	<script>
 		$(document).ready(function() {
-			console.log($('#sdsca11').val());
-		    if($('#sdsca11').val() == '0') {
-			    $('#smokingInput').attr('disabled', 'true');
-			}
-			else{
-			    $('#smokingInput').attr('disabled', 'false');
-			}
-		});
+            $('input:radio[name=sdsca11]').click(function() {
+                var checkval = $(this).val();
+                $('#smokingInput').prop('disabled', !(checkval == '1'));
+             });
+        });
 	</script>
 
 
