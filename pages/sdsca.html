@@ -637,13 +637,13 @@
     <script src="../dist/js/sb-admin-2.js"></script>
 	
 	<script>
-		$('#sdsca11').change(function() {
+		$(document).ready(function() {
 			console.log($('#sdsca11').val());
 		    if($('#sdsca11').val() == '0') {
-			    $('#smokingInput').attr('disabled', true);
+			    $('#smokingInput').attr('disabled', 'true');
 			}
 			else{
-			    $('#smokingInput').attr('disabled', false);
+			    $('#smokingInput').attr('disabled', 'false');
 			}
 		});
 	</script>
