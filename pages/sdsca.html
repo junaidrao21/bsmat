@@ -588,10 +588,9 @@
 												</div>
                                             </div>
                                         </div> 
-                                        <div class="fa col-lg-12">
+                                        <div class="fa col-lg-6">
                                             <div class="form-group">
-                                                <label>11a. How many cigarettes did you smoke on an average day? </label>
-                                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
+                                                <input class="form-control" id="smokingInput" type="text" placeholder="How many cigarettes did you smoke on an average day?" disabled>
                                             </div>
                                         </div> 
                                         <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
@@ -636,6 +635,17 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+	
+	<script>
+		$('#sdsca11').change(function() {
+		    if($('#sdsca11').val() == '0') {
+			    $('#smokingInput').attr('disabled', true);
+			}
+			else{
+			    $('#smokingInput').attr('disabled', false);
+			}
+		});
+	</script>
 
 
 
