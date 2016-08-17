@@ -94,13 +94,18 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Tables</h1>
+                    <h1 class="page-header">Survey Responses</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
+					<label> Please select the survey to view responses </label>
+					<select class="form-control">
+						<option>PAM</option>
+						<option>SDSCA</option>
+					</select>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Patient Activation Measure - PAM
