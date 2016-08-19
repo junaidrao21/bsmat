@@ -102,11 +102,13 @@
             <div class="row">
                 <div class="col-lg-12">
 					<label> Please select the survey to view responses </label>
-					<select class="form-control">
-						<option>PAM</option>
-						<option>SDSCA</option>
-					</select>
-                    <div class="panel panel-default">
+					<div class="col-lg-4">
+						<select class="form-control">
+							<option>PAM</option>
+							<option>SDSCA</option>
+						</select>
+					</div><br/>
+                    <div class="panel panel-default" id="pam-panel">
                         <div class="panel-heading">
                             Patient Activation Measure - PAM
                         </div>
@@ -207,6 +209,13 @@
                 responsive: true
         });
     });
+	
+	$('select').on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var valueSelected = this.value;
+        alert(valueSelected);
+    });
+	
     </script>
 
 </body>
