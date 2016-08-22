@@ -107,7 +107,7 @@
 							<option>PAM</option>
 							<option>SDSCA</option>
 						</select>
-					</div><br/>
+					</div>
                     <div class="panel panel-default" id="pam-panel">
                         <div class="panel-heading">
                             Patient Activation Measure - PAM
@@ -119,9 +119,11 @@
 									$server = "localhost";
 									$user = "root";
 									$pass = "password";
+									$src = "data";
+									$query = "SELECT*FROM " . $src;
 									$conn = mysqli_connect($server,$user, $pass); 
 									mysqli_select_db($conn,'test');
-									$result=mysqli_query($conn,"SELECT*FROM data");
+									$result=mysqli_query($conn,$query);
 								?>
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
