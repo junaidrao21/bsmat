@@ -100,11 +100,9 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-4">
 					<label> Please select the survey to view responses </label>
-				</div>
-				<div class="col-lg-4">
-					<select class="form-control">
+					<select>
 						<option>PAM</option>
 						<option>SDSCA</option>
 					</select>
