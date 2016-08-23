@@ -101,13 +101,15 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
-					<label> Please select the survey to view responses </label> <br/>
+					<label> Please select the survey to view responses </label>
 					<div class="col-lg-4">
 						<select class="form-control">
 							<option>PAM</option>
 							<option>SDSCA</option>
 						</select>
 					</div>
+				</div>
+				<div class="col-lg-12">
                     <div class="panel panel-default" id="pam-panel">
                         <div class="panel-heading">
                             Patient Activation Measure - PAM
