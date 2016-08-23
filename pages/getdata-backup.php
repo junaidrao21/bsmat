@@ -94,21 +94,14 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Survey Responses</h1>
+                    <h1 class="page-header">Tables</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-4">
-					<label> Please select the survey to view responses </label>
-					<select>
-						<option>PAM</option>
-						<option>SDSCA</option>
-					</select>
-				</div>
-				<div class="col-lg-12">
-                    <div class="panel panel-default" id="pam-panel">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             Patient Activation Measure - PAM
                         </div>
@@ -119,11 +112,9 @@
 									$server = "localhost";
 									$user = "root";
 									$pass = "password";
-									$src = "data";
-									$query = "SELECT*FROM " . $src;
 									$conn = mysqli_connect($server,$user, $pass); 
 									mysqli_select_db($conn,'test');
-									$result=mysqli_query($conn,$query);
+									$result=mysqli_query($conn,"SELECT*FROM data");
 								?>
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
@@ -179,76 +170,6 @@
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
-					
-					<div class="panel panel-default" id="sdsca-panel" style="display:none">
-                        <div class="panel-heading">
-                            Summary of Diabetes Self-Care Activities - SDSCA
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-								<?php
-									$server = "localhost";
-									$user = "root";
-									$pass = "password";
-									$src = "sdsca";
-									$query = "SELECT*FROM " . $src;
-									$conn = mysqli_connect($server,$user, $pass); 
-									mysqli_select_db($conn,'test');
-									$result=mysqli_query($conn,$query);
-								?>
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-									<thead>
-										<tr>
-											<th>ID</th>
-											<th>Q1</th>
-											<th>Q2</th>
-											<th>Q3</th>
-											<th>Q4</th>
-											<th>Q5</th>
-											<th>Q6</th>
-											<th>Q7</th>
-											<th>Q8</th>
-											<th>Q9</th>
-											<th>Q10</th>
-											<th>Q11</th>
-											<th>Q12</th>	
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-										<?php 
-											while($row = mysqli_fetch_row($result)){
-										?>
-                                        <tr class="odd gradeX">
-											<td><?php echo $row[0]?></td>
-											<td><?php echo $row[1]?></td>
-											<td><?php echo $row[2]?></td>
-											<td><?php echo $row[3]?></td>
-											<td><?php echo $row[4]?></td>
-											<td><?php echo $row[5]?></td>
-											<td><?php echo $row[6]?></td>
-											<td><?php echo $row[7]?></td>
-											<td><?php echo $row[8]?></td>
-											<td><?php echo $row[9]?></td>
-											<td><?php echo $row[10]?></td>
-											<td><?php echo $row[11]?></td>
-											<td><?php echo $row[12]?></td>
-										</tr>
-										<?php 
-											} 
-											mysqli_close($conn);
-										?>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                            <div class="well">
-                                <!--p>1 = Strongly Disagree, 2 = Disagree, 3 = Agree, 4 = Strongly Agree, 5 = N/A</p-->
-                            </div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -281,19 +202,6 @@
                 responsive: true
         });
     });
-	
-	$('select').on('change', function (e) {
-        var optionSelected = $("option:selected", this);
-        var valueSelected = this.value;
-        if(valueSelected == 'SDSCA') {
-			document.getElementById('pam-panel').style.display = 'none';
-			document.getElementById('sdsca-panel').style.display = 'block';
-		} else {
-			document.getElementById('sdsca-panel').style.display = 'none';
-			document.getElementById('pam-panel').style.display = 'block';
-		}
-    });
-	
     </script>
 
 </body>
