@@ -101,7 +101,7 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
-					<label> Please select the survey to view responses </label>
+					<label> Please select the survey to view responses </label> <br/>
 					<div class="col-lg-4">
 						<select class="form-control">
 							<option>PAM</option>
