@@ -280,7 +280,6 @@
 
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-                responsive: true,
 				"scrollX": true
         });
 		$('#dataTables-sdsca').DataTable({
