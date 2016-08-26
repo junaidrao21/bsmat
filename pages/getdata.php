@@ -81,9 +81,9 @@
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-                        <li>
+                        <!--li>
                             <a href="pam.html"><i class="fa fa-edit fa-fw"></i> Add Response</a>
-                        </li>
+                        </li-->
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -125,7 +125,7 @@
 									mysqli_select_db($conn,'test');
 									$result=mysqli_query($conn,$query);
 								?>
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example" width="100%">
 									<thead>
 										<tr>
 											<th>ID</th>
@@ -197,7 +197,7 @@
 									mysqli_select_db($conn,'test');
 									$result=mysqli_query($conn,$query);
 								?>
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example" width="100%">
 									<thead>
 										<tr>
 											<th>ID</th>
