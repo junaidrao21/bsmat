@@ -125,7 +125,7 @@
 									mysqli_select_db($conn,'test');
 									$result=mysqli_query($conn,$query);
 								?>
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example" width="90%">
 									<thead>
 										<tr>
 											<th>ID</th>
@@ -197,7 +197,7 @@
 									mysqli_select_db($conn,'test');
 									$result=mysqli_query($conn,$query);
 								?>
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-sdsca">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-sdsca" width="90%">
 									<thead>
 										<tr>
 											<th>ID</th>
@@ -281,6 +281,7 @@
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
                 responsive: true,
+				"scrollX": true
         });
 		$('#dataTables-sdsca').DataTable({
 			    responsive: true,
