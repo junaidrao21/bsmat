@@ -125,7 +125,7 @@
 									mysqli_select_db($conn,'test');
 									$result=mysqli_query($conn,$query);
 								?>
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example" width="90%">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example" width="100%">
 									<thead>
 										<tr>
 											<th>ID</th>
@@ -197,7 +197,7 @@
 									mysqli_select_db($conn,'test');
 									$result=mysqli_query($conn,$query);
 								?>
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-sdsca" width="90%">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-sdsca" width="100%">
 									<thead>
 										<tr>
 											<th>ID</th>
