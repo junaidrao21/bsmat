@@ -36,6 +36,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        .dataTables_scrollBody thead {visibility: hidden;}
+    </style>
+
 </head>
 
 <body>
@@ -66,7 +70,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -100,7 +104,7 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-5">
 					<label> Please select the survey to view responses </label>
 					<select>
 						<option>PAM</option>
@@ -125,7 +129,7 @@
 									mysqli_select_db($conn,'test');
 									$result=mysqli_query($conn,$query);
 								?>
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example" width="100%">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-pam" width="100%">
 									<thead>
 										<tr>
 											<th>ID</th>
@@ -187,32 +191,32 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-								<?php
-									$server = "localhost";
-									$user = "root";
-									$pass = "password";
-									$src = "sdsca";
-									$query = "SELECT*FROM " . $src;
-									$conn = mysqli_connect($server,$user, $pass); 
-									mysqli_select_db($conn,'test');
-									$result=mysqli_query($conn,$query);
+                                <?php
+                                    $server = "localhost";
+                                    $user = "root";
+                                    $pass = "password";
+                                    $src = "sdsca";
+                                    $query = "SELECT*FROM " . $src;
+                                    $conn = mysqli_connect($server,$user, $pass);
+                                    mysqli_select_db($conn,'test');
+                                    $result=mysqli_query($conn,$query);
 								?>
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-sdsca" width="100%">
 									<thead>
 										<tr>
-											<th>ID</th>
-											<th>Q1</th>
-											<th>Q2</th>
-											<th>Q3</th>
-											<th>Q4</th>
-											<th>Q5</th>
-											<th>Q6</th>
-											<th>Q7</th>
-											<th>Q8</th>
-											<th>Q9</th>
-											<th>Q10</th>
-											<th>Q11</th>
-											<th>Q12</th>	
+                                            <th>ID</th>
+                                            <th>Q1</th>
+                                            <th>Q2</th>
+                                            <th>Q3</th>
+                                            <th>Q4</th>
+                                            <th>Q5</th>
+                                            <th>Q6</th>
+                                            <th>Q7</th>
+                                            <th>Q8</th>
+                                            <th>Q9</th>
+                                            <th>Q10</th>
+                                            <th>Q11</th>
+                                            <th>Q12</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -279,13 +283,11 @@
 	
 
     $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true,
-				"scrollX": true
+        datatable2 = $('#dataTables-pam').DataTable({
+            "scrollX": true
         });
-		$('#dataTables-sdsca').DataTable({
-			    responsive: true,
-				"scrollX": true
+        datatable = $('#dataTables-sdsca').DataTable({
+			"scrollX": true,
         });
     });
 	
@@ -295,9 +297,11 @@
         if(valueSelected == 'SDSCA') {
 			document.getElementById('pam-panel').style.display = 'none';
 			document.getElementById('sdsca-panel').style.display = 'block';
+            datatable.draw();
 		} else {
 			document.getElementById('sdsca-panel').style.display = 'none';
 			document.getElementById('pam-panel').style.display = 'block';
+            datatable2.draw();
 		}
     });
 	
