@@ -287,7 +287,7 @@
             "scrollX": true
         });
         datatable = $('#dataTables-sdsca').DataTable({
-			"scrollX": true,
+			"scrollX": true
         });
     });
 	
