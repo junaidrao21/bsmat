@@ -102,11 +102,15 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12"> 
-                                    <form action="save.php" method="post"> 
+                                    <form action="save.php" method="post">
                                             <p class="form-control-static">Below are some statements that people sometimes make when they talk about their health. Please indicate how much you agree or disagree with each statement as it applies to you personally by circling your answer. Your answers should be what is true for you and not just what you think others want you to say.</p> 
                                         <div class="fa col-lg-11">
                                             <div class="form-group">
                                                 <p class="form-control-sttic">If the statement does not apply to you, select N/A.</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Subject ID: </label>
+                                                <input name="subjectID" id="subID" type="text">
                                             </div>
                                         </div>
                                         <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
@@ -565,6 +569,13 @@
 			if (!results[2]) return '';
 			return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
+        $(document).ready(function(){
+            var paramVal = getParameterByName('id');
+            if (paramVal){
+                $('#subID').val(paramVal);
+                $('#subID').prop('readonly',1);
+            }
+        });
 	</script>
 
 

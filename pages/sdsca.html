@@ -102,7 +102,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12"> 
-                                    <form action="submitSDSCA.php" method="post"> 
+                                    <form action="submitSDSCA.php" method="post">
                                             <p class="form-control-static">The questions below ask you about your diabetes self-care activities during the past 7 days. 
 											If you were sick during the past 7 days, please think back to the last 7 days that you were not sick.</p> 
                                         <!--div class="fa col-lg-11">
@@ -110,6 +110,10 @@
                                                 <p class="form-control-sttic">If the statement does not apply to you, select N/A.</p>
                                             </div>
                                         </div-->
+                                        <div class="form-group">
+                                            <label>Subject ID: </label>
+                                            <input name="subjectID" id="subID" type="text">
+                                        </div>
                                         <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
                                         <div class="fa col-lg-12">
 											<h2>Diet</h2>
@@ -721,7 +725,7 @@
                                         <div class="fa col-lg-4">
                                             <div class="form-group">
 												<label>If yes, how many cigarettes did you smoke on an average day? </label>
-                                                <input class="form-control" name="sdsca12" id="smokingInput" type="text" value="0" disabled>
+                                                <input class="form-control" name="sdsca12" id="smokingInput" type="text" value="0" readonly>
                                             </div>
                                         </div> 
                                         <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
@@ -767,10 +771,29 @@
 		$(document).ready(function() {
             $('input:radio[name=sdsca11]').click(function() {
                 var checkval = $(this).val();
-                $('#smokingInput').prop('disabled', !(checkval == '1'));
+                $('#smokingInput').prop('readonly', !(checkval == '1'));
              });
         });
 	</script>
+
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        $(document).ready(function(){
+            var paramVal = getParameterByName('id');
+            if (paramVal){
+                $('#subID').val(paramVal);
+                $('#subID').prop('readonly',1);
+            }
+        });
+    </script>
 
 </body>
 

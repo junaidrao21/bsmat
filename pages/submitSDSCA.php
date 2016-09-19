@@ -9,7 +9,7 @@ mysqli_query($conn,$sql);
 mysqli_select_db($conn,'test');
 
 $sql1 = "CREATE TABLE IF NOT EXISTS sdsca(
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+id INT(6) UNSIGNED PRIMARY KEY, 
 Q1 INT(6) NOT NULL,
 Q2 INT(6) NOT NULL,
 Q3 INT(6) NOT NULL,
@@ -25,7 +25,7 @@ Q12 INT(6)
 
 )";
 mysqli_query($conn,$sql1);
-mysqli_query($conn,"INSERT INTO sdsca (Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12) VALUES ('$_POST[sdsca1]','$_POST[sdsca2]','$_POST[sdsca3]','$_POST[sdsca4]','$_POST[sdsca5]','$_POST[sdsca6]','$_POST[sdsca7]','$_POST[sdsca8]','$_POST[sdsca9]','$_POST[sdsca10]','$_POST[sdsca11]','$_POST[sdsca12]')");
+mysqli_query($conn,"INSERT INTO sdsca (id,Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12) VALUES ('$_POST[subjectID]','$_POST[sdsca1]','$_POST[sdsca2]','$_POST[sdsca3]','$_POST[sdsca4]','$_POST[sdsca5]','$_POST[sdsca6]','$_POST[sdsca7]','$_POST[sdsca8]','$_POST[sdsca9]','$_POST[sdsca10]','$_POST[sdsca11]','$_POST[sdsca12]')");
 mysqli_close($conn);
 ?>
 <!DOCTYPE html>
@@ -39,6 +39,6 @@ mysqli_close($conn);
 </script>
 </head>
 <body>
-Go to <a href="pam.html">index.html</a>
+Go to <a href="index.html">index.html</a>
 </body>
 </html>
